@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PresentationShoeController!{% endblock %}
+
+{% block body %}
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="basket-image"></div>
+      </div>
+      <div class="col-md-6">
+        <div class="basket-details">
+          <h1 class="basket-name">Nom de la Basket</h1>
+          <div class="basket-category">Catégorie: <span>Homme/Femme/Enfant</span></div>
+          <div class="basket-sex">Sexe: <span>Unisexe</span></div>
+          <div class="basket-price">Prix: <span>100€</span></div>
+          <div class="basket-sizes">Tailles disponibles:
+            <select class="form-select" id="sizes">
+              <option>36</option>
+              <option>36.5</option>
+              <option>37</option>
+              <option>37.5</option>
+              <option>38</option>
+              <option>38.5</option>
+              <option>39</option>
+              <option>39.5</option>
+              <option>40</option>
+              <option>40.5</option>
+              <option>41</option>
+              <option>41.5</option>
+              <option>42</option>
+              <option>42.5</option>
+              <option>43</option>
+              <option>43.5</option>
+              <option>44</option>
+              <option>44.5</option>
+              <option>45</option>
+              <option>45.5</option>
+              <option>46</option>
+              <option>46.5</option>
+              <option>47</option>
+              <option>47.5</option>
+              <option>48</option>
+            </select>
+          </div>
+          <div class="basket-quantity">Quantité en stock: <span>10</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

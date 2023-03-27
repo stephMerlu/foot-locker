@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<div class="container">
+  <h1 class="text-center mt-5">La collection de baskets</h1>
+<div class="d-flex justify-content-end">
+  <form class="mt-4">
+    <div class="row g-3">
+      <div class="col-md-6 mb-3">
+        <label for="prix">Filtrer par prix</label>
+        <select class="form-select my-custom-class" id="prix">
+          <option>Tous les prix</option>
+          <option>Moins de 50€</option>
+          <option>Entre 50€ et 100€</option>
+          <option>Entre 100€ de 150€</option>
+          <option>Plus de 150€<option>
+        </select>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Filtrer</button>
+  </form>
+</div>
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-5 flex-wrap">
+    <div class="col">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Basket 1</h5>
+          <p class="card-text">Prix : 40€</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Basket 2</h5>
+          <p class="card-text">Prix : 80€</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Basket 3</h5>
+          <p class="card-text">Prix : 110€</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
