@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ShoesType extends AbstractType
 {
@@ -14,7 +15,7 @@ class ShoesType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('image')
+            ->add('imageFile', VichImageType::class)
             ->add('price')
             ->add('sexe', ChoiceType::class, [
                 'choices' => [
@@ -59,7 +60,9 @@ class ShoesType extends AbstractType
                     '47.5' => '47.5',
                     '48' => '48',
                 ],
-                'label' => 'Pointure'
+                'label' => 'Pointure',
+                'multiple' => true,
+                'expanded' => true,
             ])
             ->add('quatityStock')
         ;
