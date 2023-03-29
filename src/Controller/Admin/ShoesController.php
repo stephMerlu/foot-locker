@@ -34,7 +34,7 @@ class ShoesController extends AbstractController
             return $this->redirectToRoute('app_admin_shoes_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('admin/shoes/new.html.twig', [
+        return $this->render('admin/shoes/new.html.twig', [
             'shoe' => $shoe,
             'form' => $form,
         ]);

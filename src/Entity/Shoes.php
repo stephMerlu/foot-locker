@@ -19,9 +19,6 @@ class Shoes
     #[ORM\Column(length: 50)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $image = null;
-
     #[ORM\Column]
     private ?float $price = null;
 
@@ -31,8 +28,8 @@ class Shoes
     #[ORM\Column(length: 50)]
     private ?string $category = null;
 
-    #[ORM\Column]
-    private ?float $shoeSize = null;
+    #[ORM\Column(type: 'json')]
+    private ?array $shoeSize = null;
 
     #[ORM\Column]
     private ?int $quatityStock = null;
@@ -64,6 +61,14 @@ class Shoes
     {
         return $this->imageFile;
     }
+
+    public function getImageUrl(): ?string
+{
+    if ($this->imageName) {
+        return '/images/shoes/' . $this->imageName;
+    }
+    return null;
+}
 
     public function setImageName(?string $imageName): void
     {
@@ -98,18 +103,6 @@ class Shoes
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): self
-    {
-        $this->image = $image;
 
         return $this;
     }
@@ -150,15 +143,15 @@ class Shoes
         return $this;
     }
 
-    public function getShoeSize(): ?float
+    public function getShoeSize(): ?array
     {
         return $this->shoeSize;
     }
 
-    public function setShoeSize(float $shoeSize): self
+    public function setShoeSize(array $shoeSize): self
     {
         $this->shoeSize = $shoeSize;
-
+    
         return $this;
     }
 

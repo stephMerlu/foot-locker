@@ -3,9 +3,9 @@
 {% block title %}New Shoes{% endblock %}
 
 {% block body %}
-    <h1 class="py-3 text-center">Ajouter de nouvelles baskets</h1>
+    <h1 class="py-3 text-center">Ajouter un nouveau produit</h1>
 
     {{ include('admin/shoes/_form.html.twig') }}
 
-    <a href="{{ path('app_admin_shoes_index') }}">Retour à la liste</a>
+    <a href="{{ path('app_admin_shoes_index') }}" class="btn btn-secondary">Retour à la liste</a>{% endblock %}
 {% endblock %}

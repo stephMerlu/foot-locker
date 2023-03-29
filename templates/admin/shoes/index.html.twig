@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des baskets{% endblock %}
+{% block title %}Liste des produits{% endblock %}
 
 {% block body %}
     <div class="d-flex justify-content-center align-items-center gap-5">
@@ -9,7 +9,7 @@
 			<i class="fa-solid fa-plus"></i>
 		</a>
 	</div>
-    <div class="table-responsive container">
+    <div class="table-responsive container-fluid mx-auto">
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -28,18 +28,18 @@
                     <tr>
                         <td>{{ shoe.id }}</td>
                         <td>{{ shoe.name }}</td>
-                        <td>{{ shoe.image }}</td>
+                        <td><img src="{{ vich_uploader_asset(shoe) }}" width="250px" /></td> 
                         <td>{{ shoe.price }}</td>
                         <td>{{ shoe.sexe }}</td>
                         <td>{{ shoe.category }}</td>
-                        <td>{{ shoe.shoeSize }}</td>
+                        <td>{{ shoe.shoeSize|join(', ') }}</td>                        
                         <td>{{ shoe.quatityStock }}</td>
-                    <td>
+                        <td>
                         	<div class="d-flex justify-content-center align-items-center gap-2">
-								<a class="btn btn-success" href="{{ path('app_admin_shoes_show', {'id': shoe.id}) }}">
+								<a class="btn btn-warning" href="{{ path('app_admin_shoes_show', {'id': shoe.id}) }}">
 									<i class="fa-solid fa-eye"></i>
 								</a>
-								<a class="btn btn-success" href="{{ path('app_admin_shoes_edit', {'id': shoe.id}) }}">
+								<a class="btn btn-warning" href="{{ path('app_admin_shoes_edit', {'id': shoe.id}) }}">
 									<i class="fa-solid fa-pen"></i>
 								</a>
 							</div>
@@ -47,7 +47,7 @@
                     </tr>
                 {% else %}
                     <tr>
-                        <td colspan="8">no records found</td>
+                        <td colspan="">no records found</td>
                     </tr>
                 {% endfor %}
             </tbody>
