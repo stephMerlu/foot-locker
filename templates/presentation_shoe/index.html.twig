@@ -1,24 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PresentationShoeController!{% endblock %}
+{% block title %}Présentation de la basket - Foot Locker{% endblock %}
 
 {% block body %}
-
-  <div class="container mt-5">
-    <div class="card">
-      <div class="row">
-        <div class="col-md-5">
-          <img src="{{ asset('/images/shoes/6423191a5a51d505987072.png') }}" alt="Nom de l'image" class="card-img-top basket-image">
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 mb-5">
+        <div class="card bg-light border-0 rounded-0">
+          <img src="{{ asset('/images/shoes/6423191a5a51d505987072.png') }}" alt="Image de la basket" class="card-img-top p-4">
         </div>
-        <div class="col-md-7">
-          <div class="card-body">
-            <h1 class="card-title basket-name">Nike air</h1>
-            <p class="card-text basket-category">Catégorie: <span>Life style</span></p>
-            <p class="card-text basket-sexe">Sexe: <span>Unisexe</span></p>
-            <p class="card-text basket-price">Prix: <span>100€</span></p>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div class="card border-0 rounded-0">
+          <div class="card-body text-center">
+            <h1 class="card-title h3 mb-3">Nike Air</h1>
+            <p class="card-text mb-2"><strong>Catégorie:</strong> Lifestyle</p>
+            <p class="card-text mb-2"><strong>Genre:</strong> Unisexe</p>
+            <p class="card-text mb-2"><strong>Prix:</strong> 100€</p>
             <div class="input-group mb-3">
-              <label class="input-group-text" for="sizes">Tailles disponibles:</label>
-              <select class="form-select">
+                <label class="input-group-text" for="sizes">Tailles disponibles:</label>
+              <select class="form-select" id="sizes">
                 <option>36</option>
                 <option>36.5</option>
                 <option>37</option>
@@ -46,11 +47,14 @@
                 <option>48</option>
               </select>
               </div>
-              <div>
-                <button class="btn btn-primary bouton-add" type="button">Ajouter au panier</button>
-              </div>
+              </select>
             </div>
-            <p class="card-text basket-quantity">Quantité en stock: <span>10</span></p>
+            <p class="card-text mb-2"><strong>Quantité en stock:</strong> 10</p>
+            <div class="mb-3">
+              <label class="form-label" for="quantity">Quantité :</label>
+              <input type="number" class="form-control" id="quantity" value="1" min="1" max="10">
+            </div>
+            <button type="button" class="btn btn-primary btn-block mb-3">Ajouter au panier</button>
           </div>
         </div>
       </div>

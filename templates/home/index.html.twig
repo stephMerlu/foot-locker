@@ -3,7 +3,7 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<div class="container">
+<div class="container-fluid">
   <h1 class="text-center mt-5">La collection de sneakers</h1>
 <div class="justify-content-end">
   <form class="mt-4">
@@ -22,12 +22,12 @@
     <button class="btn btn-primary" type="submit">Filtrer</button>
   </form>
 </div>
-<div class="d-flex justify-content-center">
-  <div class="row row-cols-md-3 g-4 mt-5">
+<div class="d-flex flex-wrap justify-content-center">
+  <div class="row row-cols-md-3 g-4 mt-5 ">
     {% for shoe in shoes %}
       <div class="col">
         <div class="card">
-          <img src="{{ vich_uploader_asset(shoe) }}" class="card-img"/>        
+          <img src="{{ vich_uploader_asset(shoe) }}" class="card-img img-fit img-responsive"/>        
           <div class="card-body">
             <h5 class="card-title">{{ shoe.name }}</h5>
             <p class="card-text">Prix : {{shoe.price}}€</p>
