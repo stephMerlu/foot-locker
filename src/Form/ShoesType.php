@@ -65,7 +65,7 @@ class ShoesType extends AbstractType
                 'multiple' => true,
                 'expanded' => true,
             ])
-            ->add('quatityStock')
+            ->add('quantityStock')
         ;
     }
 

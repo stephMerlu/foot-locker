@@ -5,7 +5,7 @@
 {% block body %}
 <div class="container">
   <h1 class="text-center mt-5">La collection de sneakers</h1>
-<div class="d-flex justify-content-end">
+<div class="justify-content-end">
   <form class="mt-4">
     <div class="row g-3">
       <div class="col-md-6 mb-3">
@@ -22,36 +22,20 @@
     <button class="btn btn-primary" type="submit">Filtrer</button>
   </form>
 </div>
-{% for shoe in shoes %}
-  <div class="row row-cols-1 row-cols-md-3 g-4 mt-5 flex-wrap">
-    <div class="col">
-      <div class="card">
-        <img src="{{ vich_uploader_asset(shoe) }}"/>        
-        <div class="card-body">
-          <h5 class="card-title">{{ shoe.name }}</h5>
-          <p class="card-text">Prix : {{shoe.price}}€</p>
+<div class="d-flex justify-content-center">
+  <div class="row row-cols-md-3 g-4 mt-5">
+    {% for shoe in shoes %}
+      <div class="col">
+        <div class="card">
+          <img src="{{ vich_uploader_asset(shoe) }}" class="card-img"/>        
+          <div class="card-body">
+            <h5 class="card-title">{{ shoe.name }}</h5>
+            <p class="card-text">Prix : {{shoe.price}}€</p>
+          </div>
         </div>
       </div>
-    </div>
-{% endfor %}
-    <div class="col">
-      <div class="card">
-      <img src="{{ asset('/images/shoes/6423191a5a51d505987072.png') }}" alt="" class="img-fluid">
-        <div class="card-body">
-          <h5 class="card-title">Basket 2</h5>
-          <p class="card-text">Prix : 80€</p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-      <img src="{{ asset('/images/shoes/6423191a5a51d505987072.png') }}" alt="" class="img-fluid">
-        <div class="card-body">
-          <h5 class="card-title">Basket 3</h5>
-          <p class="card-text">Prix : 110€</p>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
+
 {% endblock %}

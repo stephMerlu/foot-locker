@@ -87,5 +87,9 @@
   margin-top: 20px;
 }
 
+.card-img {
+  width: 414px;
+  height: 250px;
+}
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmNzcyIsIm1hcHBpbmdzIjoiOzs7QUFBQTtJQUNJLDJCQUEyQjtBQUMvQjtBQUNBO0lBQ0ksWUFBWTtFQUNkOztFQUVBO0lBQ0UsWUFBWTtFQUNkLEMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hc3NldHMvc3R5bGVzL2FwcC5jc3MiXSwic291cmNlc0NvbnRlbnQiOlsiYm9keSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBsaWdodGdyYXk7XHJcbn1cclxuLmZvcm0tc2VsZWN0IHtcclxuICAgIHdpZHRoOiAyMDBweDtcclxuICB9XHJcblxyXG4gIC5teS1jdXN0b20tY2xhc3Mge1xyXG4gICAgd2lkdGg6IDMwMHB4O1xyXG4gIH0iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=*/
