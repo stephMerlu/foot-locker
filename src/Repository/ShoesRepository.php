@@ -39,28 +39,33 @@ class ShoesRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Shoes[] Returns an array of Shoes objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('s')
-//            ->andWhere('s.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('s.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    //    /**
+    //     * @return Shoes[] Returns an array of Shoes objects
+    //     */
+    public function findByExampleField($criteria)
+    {
+        $qb = $this->createQueryBuilder('s');
 
-//    public function findOneBySomeField($value): ?Shoes
-//    {
-//        return $this->createQueryBuilder('s')
-//            ->andWhere('s.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+        if (!empty($criteria['price'])) {
+            $prices = json_decode($criteria['price'], true);
+            $qb
+                ->andWhere('s.price >= :min')
+                ->setParameter('min', $prices['min'])
+                ->andWhere('s.price <= :max')
+                ->setParameter('max', $prices['max']);
+        };
+
+        return $qb
+            ->getQuery()->getResult();
+    }
+
+    //    public function findOneBySomeField($value): ?Shoes
+    //    {
+    //        return $this->createQueryBuilder('s')
+    //            ->andWhere('s.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->getQuery()
+    //            ->getOneOrNullResult()
+    //        ;
+    //    }
 }

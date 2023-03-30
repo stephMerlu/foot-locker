@@ -3,39 +3,31 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<div class="container-fluid">
-  <h1 class="text-center mt-5">La collection de sneakers</h1>
-<div class="justify-content-end">
-  <form class="mt-4">
-    <div class="row g-3">
-      <div class="col-md-6 mb-3">
-        <label for="prix">Filtrer par prix</label>
-        <select class="form-select my-custom-class" id="prix">
-          <option>Tous les prix</option>
-          <option>Moins de 50€</option>
-          <option>Entre 50€ et 100€</option>
-          <option>Entre 100€ de 150€</option>
-          <option>Plus de 150€<option>
-        </select>
+  <div class="container-fluid">
+    <h1 class="text-center mt-5">La collection de sneakers</h1>
+      <div class="justify-content-end">
+        {{form_start(search_form, {'attr': {'class': 'mt-4'}}) }}
+          <div class="row g-3">
+            <div class="col-md-6 mb-3">
+              <div class="col-md-6">
+                {{ form_row(search_form.price, {'attr': {'class': 'form-control'}}) }}
+              </div>
+            <button class="btn btn-primary" type="submit">Filtrer</button>
+        {{form_end(search_form)}}
       </div>
-    </div>
-    <button class="btn btn-primary" type="submit">Filtrer</button>
-  </form>
-</div>
-<div class="d-flex flex-wrap justify-content-center">
-  <div class="row row-cols-md-3 g-4 mt-5 ">
-    {% for shoe in shoes %}
-      <div class="col">
-        <div class="card">
-          <img src="{{ vich_uploader_asset(shoe) }}" class="card-img img-fit img-responsive"/>        
-          <div class="card-body">
-            <h5 class="card-title">{{ shoe.name }}</h5>
-            <p class="card-text">Prix : {{shoe.price}}€</p>
+  <div class="d-flex flex-wrap justify-content-center">
+    <div class="row row-cols-md-3 g-4 mt-5 ">
+      {% for shoe in shoes %}
+        <div class="col">
+          <div class="card">
+              <img src="{{ vich_uploader_asset(shoe) }}" class="card-img img-fit img-responsive"/>        
+            <div class="card-body">
+              <h5 class="card-title">{{ shoe.name }}</h5>
+              <p class="card-text">Prix : {{shoe.price}}€</p>
+            </div>
           </div>
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
-</div>
-
 {% endblock %}
