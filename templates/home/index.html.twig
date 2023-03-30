@@ -12,6 +12,12 @@
               <div class="col-md-6">
                 {{ form_row(search_form.price, {'attr': {'class': 'form-control'}}) }}
               </div>
+              <div class="col-md-6">
+                {{ form_row(search_form.sexe, {'attr': {'class': 'form-control'}}) }}
+              </div>
+              <div class="col-md-6">
+                {{ form_row(search_form.category, {'attr': {'class': 'form-control'}}) }}
+              </div>
             <button class="btn btn-primary" type="submit">Filtrer</button>
         {{form_end(search_form)}}
       </div>

@@ -16,13 +16,32 @@ class SearchType extends AbstractType
         $builder
             ->add('price', ChoiceType::class, [
                 'choices' => [
-                    'Tous les prix' => json_encode(['tous les prix']),
                     'Moins de 50€' => json_encode(['min' =>0, 'max' =>50]),
                     'Entre 50 et 100€' => json_encode(['min' =>50, 'max' =>100]),
                     'Entre 100 et 150€' => json_encode(['min' =>100, 'max' =>150]),
                     'Plus de 150€' => json_encode(['min' =>150, 'max' => 200])
                 ],
                 'label' => 'Filtrer par prix',
+                'required' =>false,
+            ])
+            ->add('sexe', ChoiceType::class, [
+                'choices' => [
+                    'Homme' => 'homme',
+                    'Femme' => 'femme',
+                    'Unisexe' => 'unisexe'
+                ],
+                'label' => 'Filtrer par sexe',
+                'required' =>false,
+            ])
+            ->add('category', ChoiceType::class, [
+                'choices' => [
+                    'Nouveauté' => 'nouveaute',
+                    'Classique' => 'classique',
+                    'Running' => 'running',
+                    'Skate' => 'skate'
+                ],
+                'label' => 'Filtrer par catégorie',
+                'required' =>false,
             ])
         ;
     }

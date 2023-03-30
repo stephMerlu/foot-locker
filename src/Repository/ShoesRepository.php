@@ -55,6 +55,18 @@ class ShoesRepository extends ServiceEntityRepository
                 ->setParameter('max', $prices['max']);
         };
 
+        if (!empty($criteria['sexe'])){
+            $qb 
+                ->andWhere('s.sexe = :sexe')
+                ->setParameter('sexe', $criteria['sexe']);
+        }
+        
+        if (!empty($criteria['category'])){
+            $qb
+                ->andWhere('s.category = :category')
+                ->setParameter('category', $criteria['category']);
+        }
+
         return $qb
             ->getQuery()->getResult();
     }
