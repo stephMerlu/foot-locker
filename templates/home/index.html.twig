@@ -25,11 +25,12 @@
     <div class="row row-cols-md-3 g-4 mt-5 ">
       {% for shoe in shoes %}
         <div class="col">
-          <div class="card">
+          <div class="card text-end">
               <img src="{{ vich_uploader_asset(shoe) }}" class="card-img img-fit img-responsive"/>        
             <div class="card-body">
               <h5 class="card-title">{{ shoe.name }}</h5>
               <p class="card-text">Prix : {{shoe.price}}€</p>
+              <a href="{{ path('app_presentation_shoe', {'id':shoe.id})}}" class="btn btn-primary">Afficher le produit</a>
             </div>
           </div>
         </div>

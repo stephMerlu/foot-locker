@@ -1,10 +1,7 @@
 controllers:
-    resource: ../src/Controller/
-    type: attribute
+  resource: ../src/Controller/
+  type: attribute
 # config/routes.yaml
 app_home:
-    path: /home
-    controller: App\Controller\HomeController::index
-app_presentation_shoe:
-    path: /presentation/shoe
-    controller: App\Controller\PresentationShoeController::index
+  path: /home
+  controller: App\Controller\HomeController::index

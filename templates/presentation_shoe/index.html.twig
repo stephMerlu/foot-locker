@@ -7,16 +7,16 @@
     <div class="row">
       <div class="col-lg-6 col-md-12 mb-5">
         <div class="card bg-light border-0 rounded-0">
-          <img src="{{ asset('/images/shoes/6423191a5a51d505987072.png') }}" alt="Image de la basket" class="card-img-top p-4">
+          <img src="{{ vich_uploader_asset(shoe) }}" alt="Image de la basket" class="card-img-top p-4">
         </div>
       </div>
       <div class="col-lg-6 col-md-12">
         <div class="card border-0 rounded-0">
           <div class="card-body text-center">
-            <h1 class="card-title h3 mb-3">Nike Air</h1>
-            <p class="card-text mb-2"><strong>Catégorie:</strong> Lifestyle</p>
-            <p class="card-text mb-2"><strong>Genre:</strong> Unisexe</p>
-            <p class="card-text mb-2"><strong>Prix:</strong> 100€</p>
+            <h1 class="card-title h3 mb-3">{{ shoe.name }}</h1>
+            <p class="card-text mb-2"><strong>Catégorie:</strong> {{ shoe.category }}</p>
+            <p class="card-text mb-2"><strong>Genre:</strong> {{ shoe.sexe }}</p>
+            <p class="card-text mb-2"><strong>Prix:</strong> {{ shoe.price }}€</p>
             <div class="input-group mb-3">
                 <label class="input-group-text" for="sizes">Tailles disponibles:</label>
               <select class="form-select" id="sizes">
@@ -56,6 +56,7 @@
             </div>
             <button type="button" class="btn btn-primary btn-block mb-3">Ajouter au panier</button>
           </div>
+          <div> 
         </div>
       </div>
     </div>
