@@ -3,10 +3,17 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-  <div class="container-fluid">
+<section id="hero">
+  <div class="hero-container" data-aos="fade-up">
+    <h1>Welcome to</h1>
+    <h2>Life is to Shoeessss</h2>
+  </div>
+</section>
+<section id="sneaker">
+<div class="container-fluid">
     <h1 class="text-center mt-5">La collection de sneakers</h1>
       <div class="justify-content-end">
-        {{ form_start(search_form, {'attr': {'class': 'mt-4'}}) }}
+        {{ form_start(search_form, {'attr': {'class': 'mt-5'}}) }}
           <div class="row g-3">
             <div class="col-md-3 mb-3">
               {{ form_row(search_form.price, {'attr': {'class': 'form-control'}}) }}
@@ -43,4 +50,7 @@
       </div>
     </div>
   </div>
+</section>
+
+  
 {% endblock %}
