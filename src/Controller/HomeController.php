@@ -12,8 +12,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
-    #[Route('/home', name: 'app_home')]
-    public function index(ShoesRepository $shoesRepository, Request $request): Response
+    #[Route('/', name: 'app_home')]
+    public function index(ShoesRepository $shoesRepository, Request $request,): Response
     {
         $form = $this->createForm(SearchType::class);
         $form->handleRequest($request);
