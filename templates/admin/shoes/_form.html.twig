@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  {{ form_start(form, {'attr': {'class': 'row g-3 mx-5'}}) }}
+    <div class="col-md-6">
+      {{ form_row(form.name, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="col-md-6">
+      {{ form_row(form.price, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="col-md-6">
+      {{ form_row(form.sexe, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="col-md-6">
+      {{ form_row(form.imageFile, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="col-md-6">
+      {{ form_row(form.category, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="col-md-6">
+      {{ form_row(form.quatityStock, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="col-md-6">
+      {{ form_row(form.shoeSize, {'attr': {'class': 'form-control float-md-end'}}) }}
+    </div>
+    <div class="col-md-12 text-center">
+      <button type="submit" class="btn btn-primary">Sauvegarder</button>
+    </div>
+  {{ form_end(form) }}
+{% endblock %}

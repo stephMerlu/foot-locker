@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Présentation de la basket - Foot Locker{% endblock %}
+
+{% block body %}
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 mb-5">
+        <div class="card bg-light border-0 rounded-0">
+          <img src="{{ vich_uploader_asset(shoe) }}" alt="Image de la basket" class="card-img-top p-4">
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div class="card border-0 rounded-0">
+          <div class="card-body text-center">
+            <h1 class="card-title h3 mb-3">{{ shoe.name }}</h1>
+            <p class="card-text mb-2"><strong>Catégorie:</strong> {{ shoe.category }}</p>
+            <p class="card-text mb-2"><strong>Genre:</strong> {{ shoe.sexe }}</p>
+            <p class="card-text mb-2"><strong>Prix:</strong> {{ shoe.price }}€</p>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="sizes">Tailles disponibles:</label>
+              <select class="form-select" id="sizes">
+                <option>36</option>
+                <option>36.5</option>
+                <option>37</option>
+                <option>37.5</option>
+                <option>38</option>
+                <option>38.5</option>
+                <option>39</option>
+                <option>39.5</option>
+                <option>40</option>
+                <option>40.5</option>
+                <option>41</option>
+                <option>41.5</option>
+                <option>42</option>
+                <option>42.5</option>
+                <option>43</option>
+                <option>43.5</option>
+                <option>44</option>
+                <option>44.5</option>
+                <option>45</option>
+                <option>45.5</option>
+                <option>46</option>
+                <option>46.5</option>
+                <option>47</option>
+                <option>47.5</option>
+                <option>48</option>
+              </select>
+              </div>
+              </select>
+            </div>
+            <p class="card-text mb-2"><strong>Quantité en stock:</strong> 10</p>
+            <div class="mb-3">
+              <label class="form-label" for="quantity">Quantité :</label>
+              <input type="number" class="form-control" id="quantity" value="1" min="1" max="10">
+            </div>
+            <button type="button" class="btn btn-primary btn-block mb-3">Ajouter au panier</button>
+          </div>
+          <div> 
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
