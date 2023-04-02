@@ -18,12 +18,12 @@ class HomeController extends AbstractController
         $form = $this->createForm(SearchType::class);
         $form->handleRequest($request);
 
-        $orderBy ='asc';
+        $orderBy ='desc';
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
             $orderBy = $data['orderBy'] ?? 'desc';
         } else {
-            $orderBy = $request->query->get('orderBy', 'asc');
+            $orderBy = $request->query->get('orderBy', 'desc');
         }
 
         $shoes = $shoesRepository->findByExampleField($data ?? [], $orderBy);

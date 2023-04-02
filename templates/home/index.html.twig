@@ -3,7 +3,7 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img src="{{ asset('130-1301685_stiker-air-jordan-off-white-clipart-png-download.png') }}" alt="Logo" width="auto" height="50"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,10 +24,10 @@
       </form>
     </div>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <a href="{{ path('app_register') }}" class="btn btn-outline-primary me-2" type="button">Inscription</a>
-      <a href="{{ path('app_login') }}" class="btn btn-outline-primary me-2" type="button">Connexion</a>
+      <a href="" class="btn btn-outline-primary me-2" type="button">Inscription</a>
+      <a href="" class="btn btn-outline-primary me-2" type="button">Connexion</a>
       <a href="{{ path('app_admin_shoes_index') }}" class="btn btn-primary" type="button">Ajouter un produit</a>
-      <a href="{{ path('app_admin_user_index') }}" class="btn btn-primary" type="button">Liste des utilisateurs</a>
+      <a href="" class="btn btn-primary" type="button">Liste des utilisateurs</a>
       </div>
   </div>
 </nav>
@@ -39,6 +39,9 @@
 </section>
 <section id="sneaker">
 <div class="container-fluid">
+  <div class="mx-5">
+      <p class="lead my-5">Les sneakers, ou chaussures de sport, sont devenues un véritable phénomène de mode ces dernières années. Elles sont l'accessoire incontournable pour les passionnés de mode et de sport, ainsi que pour les personnes qui cherchent à allier confort et style au quotidien. Life is to Shoeesss vous propose une multitude de modèles, vous offrant un choix presque infini. Vous trouverez forcément la paire de sneakers qui vous conviend sur notre site. Nous offrons une sélection des dernières tendances des plus grandes marques, avec des prix compétitifs et un service de qualité pour satisfaire vos besoins.<p>
+  </div>
     <h1 class="text-center mt-5">La collection de sneakers</h1>
       <div class="justify-content-end">
         {{ form_start(search_form, {'attr': {'class': 'mt-5'}}) }}
